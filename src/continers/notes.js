@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import Notes from '../components/Notes'
-import {addNote, deleteNote} from '../actions'
+import {addNote, deleteNote, editNote} from '../actions'
 
 const mapStateToProps = (state, oProps) => {
   return {
@@ -11,7 +11,8 @@ const mapStateToProps = (state, oProps) => {
 const mapDispatchToProps = (dispatch, oProps) => {
   return {
     addNote: (payload) => dispatch(addNote(payload)),
-    deleteNote: (payload) => dispatch(deleteNote(payload))
+    deleteNote: (payload) => dispatch(deleteNote(payload)),
+    editNote: (payload) => dispatch(editNote(payload))
   }
 }
 

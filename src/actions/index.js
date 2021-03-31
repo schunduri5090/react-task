@@ -13,3 +13,10 @@ export function deleteNote (payload) {
     payload,
   }
 }
+
+export function editNote (payload) {
+  return {
+    type: Types.EDIT_NOTE,
+    payload,
+  }
+}

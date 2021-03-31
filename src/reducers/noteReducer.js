@@ -19,6 +19,15 @@ const noteReducer = (state=initialState, action) => {
           ...state,
           notes: state.notes.filter(note => note.id !== action.payload)
         }
+      case Types.EDIT_NOTE:
+      const { payload } = action
+      const index = state.notes.findIndex(note => note.id === payload.id)
+      const updatedNotes = [...state.notes]
+      updatedNotes[index] = payload
+        return {
+          ...state,
+          notes: updatedNotes
+        }
     default:
       return state
   }

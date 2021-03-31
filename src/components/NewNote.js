@@ -1,7 +1,7 @@
 import React from 'react'
 import {Form, Button } from 'react-bootstrap'
 
-const NewNote = ({title, body, onChangeTitle, onChangeBody, onSubmitNote}) => {
+const NewNote = ({title, body, onChangeTitle, onChangeBody, onSubmitNote, edit}) => {
   return (
     <Form>
       <Form.Group controlId="formBasicTitle">
@@ -13,7 +13,7 @@ const NewNote = ({title, body, onChangeTitle, onChangeBody, onSubmitNote}) => {
         <Form.Control as="textarea" rows={3} value={body} onChange={onChangeBody}/>
       </Form.Group>
       <Button variant="primary" type="submit" onClick={onSubmitNote} disabled={!(title && body)}>
-        Save
+        {`${edit ? 'Update' : 'Save'} `}
       </Button>
     </Form>
   )
